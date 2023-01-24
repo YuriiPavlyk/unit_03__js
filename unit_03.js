@@ -3,9 +3,9 @@
 
 function f1(){
     let out1 = document.querySelector('.out-1');
-    let i1 = document.querySelector('.i-1').value;
-    f1 = +i1; 
-    if(+i1 == 4){
+    let i1 = +document.querySelector('.i-1').value;
+    f1 = i1; 
+    if(i1 == 4){
         out1.innerHTML = true;
     }
     else{
@@ -40,9 +40,9 @@ document.querySelector('.b-2').onclick = f2;
 
 function f3(){
     let out3 = document.querySelector('.out-3');
-    let i31 = document.querySelector('.i-31').value;
-    let i32 = document.querySelector('.i-32').value;
-    if(+i31 > +i32){
+    let i31 = +document.querySelector('.i-31').value;
+    let i32 = +document.querySelector('.i-32').value;
+    if(i31 > i32){
         out3.innerHTML = i31;
     }
     else{
@@ -59,9 +59,9 @@ document.querySelector('.b-3').onclick = f3;
 
 function f4(){
     let out4 = document.querySelector('.out-4');
-    let i4 = document.querySelector('.i-4').value;
+    let i4 = +document.querySelector('.i-4').value;
     let year = 2022;
-    if (year - +i4 >= 18 ){
+    if (year - i4 >= 18 ){
         out4.innerHTML = 1;
     }
     else {
@@ -76,11 +76,11 @@ document.querySelector('.b-4').onclick = f4;
 
 function f5(){
     let out5 = document.querySelector('.out-5');
-    let i5 = document.querySelector('.i-5').value;
-    if (+i5 < 0){
+    let i5 = +document.querySelector('.i-5').value;
+    if (i5 < 0){
         out5.innerHTML = 'm';
     }
-    else if (+i5 == 0){
+    else if (i5 == 0){
         out5.innerHTML = 0;
     }
     else {
@@ -95,9 +95,9 @@ document.querySelector('.b-5').onclick = f5;
 // На странице есть input с классом i-6, куда пользователь может ввести число. Есть кнопка .b-6 которая запускает функцию f6. Функция должна вывести в  .out-6  слово even если число четное и odd если нечетное. Для проверки четности используется целочисленный остаток от деления на 2 (оператор %). Если остаток равен нулю  - четное, нет - нечетное.
 
 function f6(){
-    let i6 = document.querySelector('.i-6').value;
+    let i6 = +document.querySelector('.i-6').value;
     let out6 = document.querySelector('.out-6');
-    if(+i6 % 2 == 0){
+    if(i6 % 2 == 0){
         out6.innerHTML = 'even';
     }
     else{
@@ -111,8 +111,8 @@ document.querySelector('.b-6').onclick = f6;
 // Даны 2 input - .i-71 и .i-72, оба - input[type=number]. При нажатии кнопки .b-7 срабатывает функция f7. Функция должна число из .i-71 возвести в степень .i-72, вывести результат в  .out-7. Для возведения в степень можно использовать **, или Math.pow.
 
 function f7(){
-    let i71 = document.querySelector('.i-71').value;
-    let i72 = document.querySelector('.i-72').value;
+    let i71 = +document.querySelector('.i-71').value;
+    let i72 = +document.querySelector('.i-72').value;
     let out7 = document.querySelector('.out-7');
     out7.innerHTML = i71 ** i72;
 
@@ -125,9 +125,8 @@ document.querySelector('.b-7').onclick = f7;
 
 function f8(){
     let out8 = document.querySelector('.out-8');
-    let s8 = document.querySelector('.s-8');
-    let num = +s8.value;
-    switch(num){
+    let s8 = +document.querySelector('.s-8').value;
+    switch(s8){
         case 1:
             out8.innerHTML = 'one';
             break;
@@ -151,15 +150,14 @@ document.querySelector('.b-8').onclick = f8;
 
 function f9(){
     let out9 = document.querySelector('.out-9');
-    let i9 = document.querySelector('.i-9');
-    let num = +i9.value;
-    if(num >= 1 && num <= 32 ){
+    let i9 = +document.querySelector('.i-9').value;
+    if(i9 >= 1 && i9 <= 32 ){
         out9.innerHTML = 1;
     }
-    else if(num >= 33 && num <= 43){
+    else if(i9 >= 33 && i9 <= 43){
         out9.innerHTML = 2;
     }
-    else if(num >= 44 && num <= 64){
+    else if(i9 >= 44 && i9 <= 64){
         out9.innerHTML = 3;
     }
     else {
@@ -175,9 +173,8 @@ document.querySelector('.b-9').onclick = f9;
 
 function f10(){
     let out10 = document.querySelector('.out-10');
-    let s10 = document.querySelector('.s-100');
-    let num = +s10.value;
-    switch(num){
+    let s1 = +document.querySelector('.s-100').value;
+    switch(s1){
             case 6:
                 out10.innerHTML = 'six';
                 break;
@@ -199,7 +196,23 @@ document.querySelector('.b-10').onclick = f10;
 // Дан select .s-110. По изменению состояния select (событие onchange) выведите value выбранного option в .out-11.
 
 function f11(){
+    let s = +document.querySelector('.s-110').value;
+    let out = document.querySelector('.out-11');
+    switch(s){
+        case 6:
+            out.innerHTML = 6;
+            break;
+            case 7:
+            out.innerHTML = 7;
+            break;
+            case 11:
+            out.innerHTML = 11;
+            break;
+            case 9:
+            out.innerHTML = 9;
+            break;
 
+    }
 }
 
 document.querySelector('.s-110').onchange = f11;
@@ -210,8 +223,8 @@ document.querySelector('.s-110').onchange = f11;
 let i120 = document.querySelector('.i-120');
 
 function f12(){
-   // let v = i120.value;
-   // document.querySelector('.out-12').innerHTML = (typeof v);
+    let v = i120.value;
+    document.querySelector('.out-12').innerHTML = (typeof v);
 
 }
 
@@ -221,7 +234,9 @@ document.querySelector('.b-12').onclick = f12;
 // Дан input i-130. В отличие от предыдущего задания - input type number. По нажатию кнопки получите значение из input  в переменную, а затем выведите в out-13 typeof полученной переменной. Typeof позволяет определить тип данных. Если вы правильно все сделали - то удивительно, но тип данных будет string! Подумайте почему так?
 
 function f13(){
-
+    let i = document.querySelector('.i-130');
+    let m = i.value;
+    document.querySelector('.out-13').innerHTML = (typeof m);
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -231,6 +246,24 @@ document.querySelector('.b-13').onclick = f13;
 // Дан input .i-141 и .i-142, type=number.  Дан select .s-143, который содержит четыре операции - +, -, *, / . Дана кнопка b-14, при нажатии на которую срабатывает функция f14. Функция выводит в .out-14 результат операций выбранной в 3-м select к числам введенным в первом и втором input. Например выбрано 1 13 +, нужно вывести результат операции 1+13 т.е.  14.
 
 function f14(){
+    let i1 = +document.querySelector('.i-141').value;
+    let i2 = +document.querySelector('.i-142').value;
+    let s = document.querySelector('.s-143').value;
+    let out = document.querySelector('.out-14');
+    switch(s){
+        case "+":
+            out.innerHTML = i1 + i2;
+            break;
+        case "-":
+            out.innerHTML = i1 - i2;
+            break;
+        case "*":
+            out.innerHTML = i1 * i2;
+            break;
+        case "/":
+            out.innerHTML = i1 / i2;
+            break;
+    }
 
 }
 
@@ -241,7 +274,17 @@ document.querySelector('.b-14').onclick = f14;
 // Дан select .s-151 и .s-152, каждый из которых содержит 1 и 0.  Дан select .s-153, который содержит две операции - && и || . Дана кнопка .b-15, при нажатии на которую срабатывает функция f15. Функция выводит в .out-15 результат логических операций выбранных в 3 select к числам выбранным в первом и втором select. Например выбрано 1 1 &&, нужно вывести результат операции 1&&1 т.е. 1 или 0.
 
 function f15(){
-
+    let s1 = +document.querySelector('.s-151').value;
+    let s2 = +document.querySelector('.s-152').value;
+    let s3 = document.querySelector('.s-153').value;
+    let out = document.querySelector('.out-15');
+    switch(s3){
+        case '&&':
+            out.innerHTML = s1 && s2;
+            break;
+        case '||':
+            out.innerHTML = s1 || s2;
+    }
 }
 
 document.querySelector('.b-15').onclick = f15;
